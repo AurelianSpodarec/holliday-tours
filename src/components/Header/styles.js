@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -6,7 +6,7 @@ const useStyles = makeStyles(theme => ({
         borderRadius: '50%',
         flexGrow: 0,
         flexShrink: 0,
-        // padding: theme.spacing(1),
+        padding: theme.spacing(1),
         backgroundColor: 'red'
     }
 }));
