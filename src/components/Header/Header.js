@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
 import {
     AppBar,
@@ -14,13 +14,16 @@ import {
 } from '@material-ui/core';
 import { Menu, Search, AccountCircle } from "@material-ui/icons";
 
-import useStyles from './styles';
+import { AuthContext } from './../../context/ContextAuth';
 
+import useStyles from './styles';
 
 function Header() {
     const classes = useStyles();
     const [mobileOpen, setMobileOpen] = useState(false);
     const [userMenuOpen, setUserMenuOpen] = useState(false);
+
+    const { authData } = useContext(AuthContext);
 
     function handleDrawerToggle() {
         setMobileOpen(!mobileOpen)
@@ -67,27 +70,31 @@ function Header() {
                         />
                     </div>
 
-
                     <Hidden smDown>
                         <div>
+
                             <Typography className={classes.root}>
                                 <Link href="/">Home</Link>
                                 <Link href="/tours">Tours</Link>
                                 <Link href="/about">About</Link>
-                                <Button variant="outlined" color="secondary">Log In</Button>
-                                <Button variant="contained" color="secondary">Sign Up</Button>
+                                {authData && authData.isAuthenticated ?
+                                    <IconButton
+                                        edge="end"
+                                        aria-label="account of current user"
+                                        // aria-controls={menuId}
+                                        aria-haspopup="true"
+                                        // onClick={renderUserDropdown}
+                                        color="inherit"
+                                    >
+                                        <AccountCircle />
+                                    </IconButton>
+                                    :
+                                    <>
+                                        <Button variant="outlined" color="secondary">Log In</Button>
+                                        <Button variant="contained" color="secondary">Sign Up</Button>
+                                    </>
+                                }
                             </Typography>
-
-                            <IconButton
-                                edge="end"
-                                aria-label="account of current user"
-                                // aria-controls={menuId}
-                                aria-haspopup="true"
-                                // onClick={renderUserDropdown}
-                                color="inherit"
-                            >
-                                <AccountCircle />
-                            </IconButton>
                         </div>
                     </Hidden>
 

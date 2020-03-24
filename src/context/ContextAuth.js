@@ -1,10 +1,16 @@
 import React, { createContext, useEffect, useState } from 'react';
+import firebase from './../firebase';
 
 
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-    const [authData, setAuthData] = useState();
+    const [authData, setAuthData] = useState(
+        {
+            user: {},
+            isAuthenticated: false
+        }
+    );
 
     function onAuthStateChange(callback) {
         // firebase.auth().onAuthStateChanged(user => {

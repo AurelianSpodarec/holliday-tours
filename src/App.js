@@ -3,17 +3,17 @@ import React from 'react';
 import { ThemeProvider } from '@material-ui/styles';
 import { createMuiTheme } from '@material-ui/core/styles';
 
-import { AuthProvider } from './../context/ContextAuth';
+import { AuthProvider } from './context/ContextAuth';
 
 import Layout from './views/Layout';
 
 const theme = createMuiTheme({
-    typography: {
-        fontFamily: [
-            '"Lato"',
-            'sans-serif'
-        ].join(',')
-    },
+    // typography: {
+    //     fontFamily: [
+    //         '"Lato"',
+    //         'sans-serif'
+    //     ].join(',')
+    // },
 });
 
 function App() {
