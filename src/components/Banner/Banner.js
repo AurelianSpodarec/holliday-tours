@@ -7,13 +7,13 @@ function Banner({ src, type }) {
     //TODO: Add parallax effect 
 
     function MediaType(type) {
-        if (type === 'iframe') {
-            <div class='embed-container'>
-                <iframe src='https://player.vimeo.com/video/396573698?autoplay=1&loop=1&autopause=0&muted=1' frameborder='0' allowfullscreen></iframe>
+        if (type === "iframe") {
+            <div className="">
+                <iframe src={src} frameborder='0' allowfullscreen></iframe>
             </div>
         } else {
-            <div>
-                <img src="/" />
+            <div className={}>
+                <img src={src} />
             </div>
         }
     }
@@ -21,7 +21,7 @@ function Banner({ src, type }) {
     return (
         <div className="root">
 
-            {MediaType}
+            {MediaType()}
 
         </div>
     );
