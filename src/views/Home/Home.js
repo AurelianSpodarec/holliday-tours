@@ -1,23 +1,21 @@
 import React from 'react';
 
-import { Grid, Typography } from '@material-ui/core';
+// import { Grid, Typography } from '@material-ui/core';
+
+import { HTMedia } from '../../components';
 
 import useStyles from './styles';
-import firebase from './../../firebase';
+
+
 function Home() {
     const classes = useStyles();
 
-    //TODO: Add error handling and re-factor this a lil bit
-    const signUp = async (data) => {
-        console.log("Sig", firebase)
-        const req = firebase.auth().createUserWithEmailAndPassword("ass", "ss");
-        console.log("Sign up", req)
-        return req;
-    }
-
     return (
-        <div onClick={signUp} className={classes.root}>
-            Home
+        <div className={classes.root}>
+            <HTMedia
+                src="https://player.vimeo.com/video/396573698?autoplay=1&loop=1&autopause=0&muted=1"
+                blockIframe
+            />
         </div>
     );
 }

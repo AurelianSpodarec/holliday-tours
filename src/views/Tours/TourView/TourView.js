@@ -4,14 +4,14 @@ import { Grid, Typography } from '@material-ui/core';
 
 import useStyles from './styles';
 
-function Tours() {
+function TourView() {
     const classes = useStyles();
 
     return (
         <div className={classes.root}>
-            Tours
+            TourView
         </div>
     );
 }
 
-export default Tours;
+export default TourView;

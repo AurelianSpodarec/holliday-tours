@@ -1,2 +1,7 @@
-import Tours from './Tours';
-export default Tours;
+import ToursView from "./ToursView";
+import TourView from "./TourView";
+
+export {
+    ToursView,
+    TourView
+}

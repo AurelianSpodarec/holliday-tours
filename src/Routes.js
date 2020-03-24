@@ -1,15 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-// import {
-//     Home as HomeView,
-//     Tours as ToursView,
-//     NotFound as NotFoundView
-// } from './views';
-
 import Home from './views/Home';
-import Tours from './views/Tours';
+import { ToursView, TourView } from './views/Tours';
 import NotFound from './views/NotFound';
+
 
 const Routing = [
     {
@@ -18,14 +13,13 @@ const Routing = [
     },
     {
         path: "/tours",
-        component: Tours,
+        component: ToursView,
 
     },
-    // {
-    //     path: "/tours/:id",
-    //     component: TourItem,
-
-    // },
+    {
+        path: "/tours/:id",
+        component: TourView,
+    },
     {
         path: "*",
         component: NotFound,
