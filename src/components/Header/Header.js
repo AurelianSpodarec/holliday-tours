@@ -10,7 +10,8 @@ import {
     Button,
     Link,
     InputBase,
-    MenuItem
+    MenuItem,
+    CardMedia
 } from '@material-ui/core';
 import { Menu, Search, AccountCircle } from "@material-ui/icons";
 
@@ -54,7 +55,10 @@ function Header() {
             <AppBar className={classes.appBar}>
                 <Toolbar className={classes.container}>
 
-                    <Typography className={classes.logoText}><Link href="/">Holliday Tours</Link></Typography>
+
+                    <img className={classes.logoImage} src="images/logos/logo-neutral.png" title="Holliday Tours Logo" />
+                    <Typography className={classes.logoText}><Link href="/" color="inherit">Holliday Tours</Link></Typography>
+
 
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>
@@ -63,8 +67,8 @@ function Header() {
                         <InputBase
                             placeholder="Search…"
                             classes={{
-                                root: classes.inputRoot,
-                                input: classes.inputInput,
+                                root: classes.searchInputRoot,
+                                input: classes.searchInput,
                             }}
                             inputProps={{ 'aria-label': 'search' }}
                         />
@@ -74,9 +78,9 @@ function Header() {
                         <div>
 
                             <Typography className={classes.root}>
-                                <Link href="/">Home</Link>
-                                <Link href="/tours">Tours</Link>
-                                <Link href="/about">About</Link>
+                                <Link href="/" color="inherit">Home</Link>
+                                <Link href="/tours" color="inherit">Tours</Link>
+                                <Link href="/about" color="inherit">About</Link>
                                 {authData && authData.isAuthenticated ?
                                     <IconButton
                                         edge="end"
@@ -119,9 +123,23 @@ function Header() {
                         }}
                         onClose={handleDrawerToggle}
                     >
-                        <div className={classes.appResponsive}>
-                            A
-                    </div>
+
+                        <div>
+                            {authData && authData.isAuthenticated ?
+                                "True" :
+                                <AccountCircle />
+                            }
+
+                            {/* some bg color */}
+                            <Typography>Log in now</Typography>
+                            <Typography>You're not logged in</Typography>
+                        </div>
+
+
+                        <Link href="/" color="inherit">Home</Link>
+                        <Link href="/tours" color="inherit">Tours</Link>
+                        <Link href="/about" color="inherit">About</Link>
+
                     </Drawer>
                 </Hidden>
             </AppBar>
