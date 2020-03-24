@@ -8,7 +8,7 @@ const AuthProvider = ({ children }) => {
     const [authData, setAuthData] = useState(
         {
             user: {},
-            isAuthenticated: false
+            isAuthenticated: true// change to false
         }
     );
 

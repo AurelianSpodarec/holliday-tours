@@ -113,6 +113,7 @@ function Header() {
                     </Hidden>
                 </Toolbar>
 
+                {/* Mobile menu */}
                 <Hidden mdUp implementation="js">
                     <Drawer
                         variant="temporary"
@@ -129,17 +130,13 @@ function Header() {
                                 "True" :
                                 <AccountCircle />
                             }
-
-                            {/* some bg color */}
                             <Typography>Log in now</Typography>
                             <Typography>You're not logged in</Typography>
                         </div>
 
-
                         <Link href="/" color="inherit">Home</Link>
                         <Link href="/tours" color="inherit">Tours</Link>
                         <Link href="/about" color="inherit">About</Link>
-
                     </Drawer>
                 </Hidden>
             </AppBar>

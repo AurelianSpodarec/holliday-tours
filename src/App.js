@@ -8,12 +8,11 @@ import { AuthProvider } from './context/ContextAuth';
 import Layout from './views/Layout';
 
 const theme = createMuiTheme({
-    // typography: {
-    //     fontFamily: [
-    //         '"Lato"',
-    //         'sans-serif'
-    //     ].join(',')
-    // },
+    typography: {
+        fontFamily: [
+            '"Nunito"',
+        ].join(',')
+    },
 });
 
 function App() {
