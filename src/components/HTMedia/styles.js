@@ -10,7 +10,8 @@ const useStyles = makeStyles(theme => ({
     root: {
         maxHeight: "650px",
         minHeight: "270px",
-        overflow: "hidden"
+        overflow: "hidden",
+        position: "relative"
     },
     iframe: {
         left: 0,
@@ -27,6 +28,13 @@ const useStyles = makeStyles(theme => ({
         height: "100%",
         width: "100%",
         zIndex: 5
+    },
+    bottomDecoration: {
+        position: 'absolute',
+        bottom: '-70px',
+        left: 0,
+        zIndex: 10,
+        fill: '#fff'
     }
 }));
 
