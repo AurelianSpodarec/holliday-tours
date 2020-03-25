@@ -15,8 +15,9 @@ import {
     Menu,
 } from '@material-ui/core';
 
-import { MenuIcon, SearchIcon } from "@material-ui/icons";
+import SearchIcon from "@material-ui/icons/Search";
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import MenuIcon from '@material-ui/icons/Menu';
 
 import { AuthContext } from './../../context/ContextAuth';
 
