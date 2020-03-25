@@ -11,13 +11,18 @@ import {
     Link,
     InputBase,
     MenuItem,
-    CardMedia
+    CardMedia,
+    Menu,
 } from '@material-ui/core';
-import { Menu, Search, AccountCircle } from "@material-ui/icons";
+
+import { MenuIcon, SearchIcon } from "@material-ui/icons";
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 import { AuthContext } from './../../context/ContextAuth';
 
 import useStyles from './styles';
+import { UserDekstopDropdown } from './sub-components';
+
 
 function Header() {
     const classes = useStyles();
@@ -34,21 +39,6 @@ function Header() {
         setUserMenuOpen(!userMenuOpen)
     }
 
-    const renderUserDropdown = (
-        <Menu
-            // anchorEl={anchorEl}
-            anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-            // id={menuId}
-            keepMounted
-            transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-            open={userMenuOpen}
-            onClose={handleUserMenuToggle}
-        >
-            <MenuItem onClick={handleUserMenuToggle}>Profile</MenuItem>
-            <MenuItem onClick={handleUserMenuToggle}>My account</MenuItem>
-        </Menu>
-    )
-
     return (
 
         <div className={classes.grow}>
@@ -62,7 +52,7 @@ function Header() {
 
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>
-                            <Search />
+                            <SearchIcon />
                         </div>
                         <InputBase
                             placeholder="Search…"
@@ -82,16 +72,9 @@ function Header() {
                                 <Link href="/tours" color="inherit">Tours</Link>
                                 <Link href="/about" color="inherit">About</Link>
                                 {authData && authData.isAuthenticated ?
-                                    <IconButton
-                                        edge="end"
-                                        aria-label="account of current user"
-                                        // aria-controls={menuId}
-                                        aria-haspopup="true"
-                                        // onClick={renderUserDropdown}
-                                        color="inherit"
-                                    >
-                                        <AccountCircle />
-                                    </IconButton>
+
+                                    <UserDekstopDropdown />
+
                                     :
                                     <>
                                         <Button variant="outlined" color="secondary">Log In</Button>
@@ -108,7 +91,7 @@ function Header() {
                             aria-label="open drawer"
                             onClick={handleDrawerToggle}
                         >
-                            <Menu />
+                            <MenuIcon />
                         </IconButton>
                     </Hidden>
                 </Toolbar>
@@ -128,7 +111,7 @@ function Header() {
                         <div>
                             {authData && authData.isAuthenticated ?
                                 "True" :
-                                <AccountCircle />
+                                <AccountCircleIcon />
                             }
                             <Typography>Log in now</Typography>
                             <Typography>You're not logged in</Typography>
