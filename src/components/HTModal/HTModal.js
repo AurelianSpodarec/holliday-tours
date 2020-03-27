@@ -8,7 +8,7 @@ import useStyles from './styles';
 function HTModal ({children}) {
     const classes = useStyles();
 
-    // Add Redux/ Context API
+    // Add Redux/ ContextAPI
 
     return (
         <Modal
