@@ -7,7 +7,7 @@ import useStyles from './styles';
 
 function HTModal ({children}) {
     const classes = useStyles();
-
+    
     // Add Redux/ context API
 
     return (
@@ -30,7 +30,6 @@ function HTModal ({children}) {
             </Fade>
         </Modal>
     )
-   
 }
 
 export default HTModal;
