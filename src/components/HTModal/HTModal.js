@@ -7,8 +7,8 @@ import useStyles from './styles';
 
 function HTModal ({children}) {
     const classes = useStyles();
-    
-    // Add Redux/ context API
+
+    // Add Redux/ Context API
 
     return (
         <Modal
@@ -20,7 +20,7 @@ function HTModal ({children}) {
             closeAfterTransition
             BackdropComponent={Backdrop}
             BackdropProps={{
-            timeout: 500,
+                timeout: 500,
             }}
         >
             <Fade in={open}>
