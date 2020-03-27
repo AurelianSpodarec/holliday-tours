@@ -69,9 +69,9 @@ function Header() {
                         <div>
 
                             <Typography className={classes.root}>
-                                <Link href="/" color="inherit">Home</Link>
-                                <Link href="/tours" color="inherit">Tours</Link>
-                                <Link href="/about" color="inherit">About</Link>
+                                <Link className={classes.link} href="/" color="inherit">Home</Link>
+                                <Link className={classes.link} href="/tours" color="inherit">Tours</Link>
+                                <Link className={classes.link} href="/about" color="inherit">About</Link>
                                 {authData && authData.isAuthenticated ?
 
                                     <UserDekstopDropdown />
@@ -118,9 +118,9 @@ function Header() {
                             <Typography>You're not logged in</Typography>
                         </div>
 
-                        <Link href="/" color="inherit">Home</Link>
-                        <Link href="/tours" color="inherit">Tours</Link>
-                        <Link href="/about" color="inherit">About</Link>
+                        <Link className={classes.link} href="/" color="inherit">Home</Link>
+                        <Link className={classes.link} href="/tours" color="inherit">Tours</Link>
+                        <Link className={classes.link} href="/about" color="inherit">About</Link>
                     </Drawer>
                 </Hidden>
             </AppBar>

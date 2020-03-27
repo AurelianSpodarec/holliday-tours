@@ -36,6 +36,9 @@ const useStyles = makeStyles(theme => ({
             marginLeft: theme.spacing(3)
         },
     },
+    link:{
+        padding: '15px 14px',
+    },
     searchInputRoot: {
         width: '100%',
     },
