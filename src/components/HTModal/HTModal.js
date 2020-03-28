@@ -3,10 +3,9 @@ import React, { useState } from "react";
 import { Modal, Fade, Backdrop } from "@material-ui/core/";
 
 import HTAuthModal from "../HTAuthModal/HTAuthModal";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch, connect } from "react-redux";
 
-
-import { openModal, closeModal } from './../../store/actions/HTModalActions';
+import { closeModal } from './../../store/actions/HTModalActions';
 
 import useStyles from "./styles";
 import HTTestModal from "../HTTestModal/HTTestModal";
@@ -22,8 +21,6 @@ const HTModal = () => {
     const dispatch = useDispatch();
     const modal = useSelector(state => state.modal);
 
-    console.log(modal.modalOpen, "modal");
-
     if (!modal.modalType) return null;
 
     const SpecificModal = MODAL_COMPONENTS[modal.modalType];
@@ -37,7 +34,7 @@ const HTModal = () => {
             closeAfterTransition
             BackdropComponent={Backdrop}
             BackdropProps={{
-                timeout: 500
+                timeout: 200
             }}
         >
             <Fade in={modal.modalOpen}>
@@ -50,7 +47,3 @@ const HTModal = () => {
 };
 
 export default HTModal;
-
-// export default connect(
-//   state => state.modal
-// )(HTModal)

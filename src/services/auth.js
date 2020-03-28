@@ -1,9 +1,19 @@
 import firebase from './../../firebase';
 
-// TODO: Catch error
-function login(data) {
-    const req = firebase.auth().createUserWithEmailAndPassword(data.email, data.password);
+
+function handleOnLogin(values) {
+    const req = firebase.auth().createUserWithEmailAndPassword(values.email, values.password);
     return req;
+}
+
+function handleOnSignup(values) {
+    const { name, email, password } = values;
+
+    try {
+        const res = await firebase.auth().createUserWithEmailAndPassword(email, password)
+    } catch (error) {
+
+    }
 }
 
 function logout() {
@@ -12,6 +22,6 @@ function logout() {
 }
 
 export {
-    login,
-    logout
+    handleOnLogin,
+    handleOnSignup
 }

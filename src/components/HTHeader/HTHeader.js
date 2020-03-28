@@ -19,14 +19,19 @@ import SearchIcon from "@material-ui/icons/Search";
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import MenuIcon from '@material-ui/icons/Menu';
 
-import { AuthContext } from './../../context/ContextAuth';
+import { AuthContext } from '../../context/ContextAuth';
+
+import { useSelector, useDispatch } from 'react-redux';
+import { openModal } from '../../store/actions/HTModalActions';
 
 import useStyles from './styles';
 import { UserDekstopDropdown } from './sub-components';
 
 
-function Header() {
+function HTHeader() {
     const classes = useStyles();
+    const dispatch = useDispatch();
+
     const [mobileOpen, setMobileOpen] = useState(false);
     const [userMenuOpen, setUserMenuOpen] = useState(false);
 
@@ -78,8 +83,8 @@ function Header() {
 
                                     :
                                     <>
-                                        <Button variant="outlined" color="secondary">Log In</Button>
-                                        <Button variant="contained" color="secondary">Sign Up</Button>
+                                        <Button onClick={() => dispatch(openModal('AUTH'))} variant="outlined" color="secondary">Log In</Button>
+                                        <Button onClick={() => dispatch(openModal('AUTH'))} variant="contained" color="secondary">Sign Up</Button>
                                     </>
                                 }
                             </Typography>
@@ -128,4 +133,4 @@ function Header() {
     );
 }
 
-export default Header;
+export default HTHeader;

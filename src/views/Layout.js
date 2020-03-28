@@ -4,20 +4,20 @@ import Routes from '../Routes';
 import { Router } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 
-import { Header, Footer } from './../components';
+import { HTHeader, HTFooter } from './../components';
 
 const browserHistory = createBrowserHistory();
 
 function Layout() {
     return (
         <div className="Layout">
-            <Header />
+            <HTHeader />
 
             <Router history={browserHistory}>
                 <Routes />
             </Router>
 
-            <Footer />
+            <HTFooter />
         </div>
     );
 }

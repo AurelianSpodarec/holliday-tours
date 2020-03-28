@@ -1,7 +1,7 @@
 import React from 'react';
 // import 'styles.js';
 
-function Footer() {
+function HTFooter() {
     return (
         <div>
             Footer
@@ -9,4 +9,4 @@ function Footer() {
     );
 }
 
-export default Footer;
+export default HTFooter;

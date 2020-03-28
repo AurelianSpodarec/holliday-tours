@@ -13,17 +13,17 @@ const AuthProvider = ({ children }) => {
     );
 
     function onAuthStateChange(callback) {
-        // firebase.auth().onAuthStateChanged(user => {
-        //     if (user) {
-        //         callback({ isAuthenticated: true, user });
-        //     } else {
-        //         callback({ isAuthenticated: false });
-        //     }
-        // });
+        firebase.auth().onAuthStateChanged(user => {
+            if (user) {
+                callback({ isAuthenticated: true, user });
+            } else {
+                callback({ isAuthenticated: false });
+            }
+        });
     }
 
     useEffect(() => {
-        //code
+        onAuthStateChange();
     }, [])
 
     return (

@@ -11,7 +11,6 @@ function HTModalReducer(state = initialState, action) {
             return {
                 modalType: action.payload,
                 modalOpen: true
-                // modalProps: action.modalProps
             }
         case 'CLOSE_MODAL':
             return initialState
