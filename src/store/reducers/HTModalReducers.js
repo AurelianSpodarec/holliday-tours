@@ -1,16 +1,19 @@
 const initialState = {
     modalType: null,
+    modalOpen: false,
     modalProps: {}
-  }
-  
+}
+
 function HTModalReducer(state = initialState, action) {
     switch (action.type) {
-        case 'SHOW_MODAL':
+        case 'OPEN_MODAL':
+            console.log(action, 'K')
             return {
-                modalType: action.modalType,
-                modalProps: action.modalProps
+                modalType: action.payload,
+                modalOpen: true
+                // modalProps: action.modalProps
             }
-        case 'HIDE_MODAL':
+        case 'CLOSE_MODAL':
             return initialState
         default:
             return state

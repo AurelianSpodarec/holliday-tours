@@ -1,13 +1,13 @@
-export const openModal = () => {
+export const openModal = (name) => {
     return {
         type: 'OPEN_MODAL',
-        payload: item
+        payload: name
     }
 }
 
-export const closeModal = () => {
+export const closeModal = (name) => {
     return {
         type: 'CLOSE_MODAL',
-        id
+        payload: name
     }
 }

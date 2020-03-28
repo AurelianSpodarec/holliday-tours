@@ -6,6 +6,7 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import { AuthProvider } from './context/ContextAuth';
 
 import Layout from './views/Layout';
+import HTModal from './components/HTModal/HTModal';
 
 const theme = createMuiTheme({
     typography: {
@@ -20,7 +21,7 @@ function App() {
     return (
         <AuthProvider>
             <ThemeProvider theme={theme}>
-
+                <HTModal />
                 <Layout />
 
             </ThemeProvider>
