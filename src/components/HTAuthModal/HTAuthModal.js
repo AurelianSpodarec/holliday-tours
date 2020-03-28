@@ -16,7 +16,10 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import Visibility from '@material-ui/icons/Visibility';
 import EmailIcon from '@material-ui/icons/Email';
 
+import { useDispatch } from "react-redux";
 import { handleOnSignup, handleOnLogin } from "../../services/auth";
+
+import { openModal, closeModal } from "../../store/actions/HTModalActions";
 
 import useStyles from './styles';
 
@@ -29,6 +32,7 @@ function HTAuthModal({ children }) {
         email: '',
         showPassword: false,
     });
+    const dispatch = useDispatch()
 
     const handleChange = prop => event => {
         setValues({ ...values, [prop]: event.target.value });
@@ -39,7 +43,8 @@ function HTAuthModal({ children }) {
     }
 
     async function onLogin() {
-        await handleOnLogin({ email: "asd@gmail.com", password: "asdasdasd" })
+        const res = await handleOnLogin({ email: "asd@gmail.com", password: "asdasdasdd" })
+        if (res.user) dispatch(closeModal())
     }
 
 
@@ -49,7 +54,6 @@ function HTAuthModal({ children }) {
             {/* Login with FB */}
             <form className={classes.root} noValidate autoComplete="off">
 
-
                 <Button onClick={() => onRegister()}>Register</Button>
             </form>
             {/* Login */}
@@ -57,7 +61,6 @@ function HTAuthModal({ children }) {
 
                 <Button onClick={onLogin}>Login</Button>
             </form>
-
 
         </div>
     )

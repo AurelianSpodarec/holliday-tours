@@ -10,6 +10,7 @@ import {
 } from '@material-ui/core';
 import { AccountCircle } from "@material-ui/icons";
 
+import { logout } from '../../../../services/auth';
 
 import useStyles from './styles';
 
@@ -65,7 +66,7 @@ function UserDekstopDropdown() {
             >
                 <MenuItem onClick={handleClose}>Profile</MenuItem>
                 <MenuItem onClick={handleClose}>My account</MenuItem>
-                <MenuItem onClick={handleClose}>Logout</MenuItem>
+                <MenuItem onClick={() => logout()}>Logout</MenuItem>
             </Menu>
         </>
     );
