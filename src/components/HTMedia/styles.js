@@ -13,6 +13,12 @@ const useStyles = makeStyles(theme => ({
         overflow: "hidden",
         position: "relative"
     },
+    children: {
+        position: 'relative',
+        height: '100%',
+        width: '100%',
+        zIndex: 15,
+    },
     iframe: {
         left: 0,
         top: 0,

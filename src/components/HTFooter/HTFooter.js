@@ -1,9 +1,11 @@
 import React from 'react';
-// import 'styles.js';
+
+import useStyles from './styles';
 
 function HTFooter() {
+    const classes = useStyles();
     return (
-        <div>
+        <div className={classes.root}>
             Footer
         </div>
     );

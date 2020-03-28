@@ -43,7 +43,7 @@ function HTAuthModal({ children }) {
     }
 
     async function onLogin() {
-        const res = await handleOnLogin({ email: "asd@gmail.com", password: "asdasdasdd" })
+        const res = await handleOnLogin({ email: "asd@gmail.com", password: "asdasdasd" })
         if (res.user) dispatch(closeModal())
     }
 

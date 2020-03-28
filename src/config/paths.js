@@ -1,4 +1,4 @@
-const paths = {
+export const paths = {
     root: "/",
     any: "*",
     about: "/about",
@@ -6,5 +6,3 @@ const paths = {
     register: "/register",
     login: "/login",
 }
-
-export { paths };
