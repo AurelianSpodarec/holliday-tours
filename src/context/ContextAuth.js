@@ -23,7 +23,7 @@ const AuthProvider = ({ children }) => {
     }
 
     useEffect(() => {
-        onAuthStateChange();
+        onAuthStateChange(setAuthData);
     }, [])
 
     return (

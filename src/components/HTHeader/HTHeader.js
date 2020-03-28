@@ -1,5 +1,7 @@
 import React, { useState, useContext } from 'react';
 
+import { BrowserRouter as Router, Switch, Route, Link, useLocation } from 'react-router-dom';
+
 import {
     AppBar,
     Toolbar,
@@ -8,7 +10,6 @@ import {
     IconButton,
     Typography,
     Button,
-    Link,
     InputBase,
     MenuItem,
     CardMedia,
@@ -24,8 +25,8 @@ import { AuthContext } from '../../context/ContextAuth';
 import { useSelector, useDispatch } from 'react-redux';
 import { openModal } from '../../store/actions/HTModalActions';
 
-import useStyles from './styles';
 import { UserDekstopDropdown } from './sub-components';
+import useStyles from './styles';
 
 
 function HTHeader() {
@@ -53,7 +54,7 @@ function HTHeader() {
 
 
                     <img className={classes.logoImage} src="images/logos/logo-neutral.png" title="Holliday Tours Logo" />
-                    <Typography className={classes.logoText}><Link href="/" color="inherit">Holliday Tours</Link></Typography>
+                    <Typography className={classes.logoText}><Link to="/">Holliday Tours</Link></Typography>
 
 
                     <div className={classes.search}>
@@ -74,9 +75,9 @@ function HTHeader() {
                         <div>
 
                             <Typography className={classes.root}>
-                                <Link className={classes.link} href="/" color="inherit">Home</Link>
-                                <Link className={classes.link} href="/tours" color="inherit">Tours</Link>
-                                <Link className={classes.link} href="/about" color="inherit">About</Link>
+                                <Link className={classes.link} to="/">Home</Link>
+                                <Link className={classes.link} to="/tours">Tours</Link>
+                                <Link className={classes.link} to="/about">About</Link>
                                 {authData && authData.isAuthenticated ?
 
                                     <UserDekstopDropdown />
@@ -93,7 +94,7 @@ function HTHeader() {
 
                     <Hidden mdUp>
                         <IconButton
-                            color="inherit"
+
                             aria-label="open drawer"
                             onClick={handleDrawerToggle}
                         >
@@ -123,9 +124,9 @@ function HTHeader() {
                             <Typography>You're not logged in</Typography>
                         </div>
 
-                        <Link className={classes.link} href="/" color="inherit">Home</Link>
-                        <Link className={classes.link} href="/tours" color="inherit">Tours</Link>
-                        <Link className={classes.link} href="/about" color="inherit">About</Link>
+                        <Link className={classes.link} to="/">Home</Link>
+                        <Link className={classes.link} to="/tours">Tours</Link>
+                        <Link className={classes.link} to="/about">About</Link>
                     </Drawer>
                 </Hidden>
             </AppBar>

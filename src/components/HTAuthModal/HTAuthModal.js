@@ -8,12 +8,15 @@ import {
     InputAdornment,
     Iconbutton,
     TextField,
-    Input
+    Input,
+    Button
 } from '@material-ui/core/';
 
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import Visibility from '@material-ui/icons/Visibility';
 import EmailIcon from '@material-ui/icons/Email';
+
+import { handleOnSignup, handleOnLogin } from "../../services/auth";
 
 import useStyles from './styles';
 
@@ -21,6 +24,7 @@ import useStyles from './styles';
 function HTAuthModal({ children }) {
     const classes = useStyles();
     const [values, setValues] = React.useState({
+        firstName: '',
         password: '',
         email: '',
         showPassword: false,
@@ -30,59 +34,28 @@ function HTAuthModal({ children }) {
         setValues({ ...values, [prop]: event.target.value });
     };
 
-    const handleClickShowPassword = () => {
-        setValues({ ...values, showPassword: !values.showPassword });
-    };
+    async function onRegister() {
+        await handleOnSignup({ firstName: "Aurelian", email: "asd@gmail.com", password: "asdasdasd" })
+    }
 
-    const handleMouseDownPassword = event => {
-        event.preventDefault();
-    };
+    async function onLogin() {
+        await handleOnLogin({ email: "asd@gmail.com", password: "asdasdasd" })
+    }
+
 
     return (
         <div>
 
             {/* Login with FB */}
+            <form className={classes.root} noValidate autoComplete="off">
 
+
+                <Button onClick={() => onRegister()}>Register</Button>
+            </form>
             {/* Login */}
             <form className={classes.root} noValidate autoComplete="off">
 
-                <FormControl>
-                    <InputLabel htmlFor="login-email">Email address</InputLabel>
-                    <FilledInput
-                        id="login-email"
-                        type="email"
-                        value={values.email}
-                        onChange={handleChange('email')}
-                        startAdornment={
-                            <InputAdornment position="start">
-                                <EmailIcon />
-                            </InputAdornment>
-                        }
-                    />
-                </FormControl>
-
-
-                <FormControl variant="filled">
-                    <InputLabel htmlFor="login-password">Password</InputLabel>
-                    <FilledInput
-                        id="filled-adornment-password"
-                        type={values.showPassword ? 'text' : 'password'}
-                        value={values.password}
-                        onChange={handleChange('password')}
-                        endAdornment={
-                            <InputAdornment position="end">
-                                <IconButton
-                                    aria-label="toggle password visibility"
-                                    onClick={handleClickShowPassword}
-                                    onMouseDown={handleMouseDownPassword}
-                                    edge="end"
-                                >
-                                    {values.showPassword ? <Visibility /> : <VisibilityOff />}
-                                </IconButton>
-                            </InputAdornment>
-                        }
-                    />
-                </FormControl>
+                <Button onClick={onLogin}>Login</Button>
             </form>
 
 

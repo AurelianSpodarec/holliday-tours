@@ -1,16 +1,23 @@
-import firebase from './../../firebase';
+import firebase from './../firebase';
 
 
-function handleOnLogin(values) {
-    const req = firebase.auth().createUserWithEmailAndPassword(values.email, values.password);
+async function handleOnLogin(values) {
+    console.log(values)
+    const req = firebase.auth().signInWithEmailAndPassword(values.email, values.password);
     return req;
 }
 
-function handleOnSignup(values) {
+async function handleOnSignup(values) {
     const { name, email, password } = values;
 
     try {
-        const res = await firebase.auth().createUserWithEmailAndPassword(email, password)
+        const res = await firebase.auth().createUserWithEmailAndPassword(email, password);
+
+        if (res.user.uid) {
+            const { uid } = res.user;
+            const userData = { email, name, uid }
+            await firebase.createNewUser
+        }
     } catch (error) {
 
     }
@@ -23,5 +30,6 @@ function logout() {
 
 export {
     handleOnLogin,
-    handleOnSignup
+    handleOnSignup,
+    logout
 }

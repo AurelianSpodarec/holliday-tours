@@ -7,7 +7,6 @@ const initialState = {
 function HTModalReducer(state = initialState, action) {
     switch (action.type) {
         case 'OPEN_MODAL':
-            console.log(action, 'K')
             return {
                 modalType: action.payload,
                 modalOpen: true

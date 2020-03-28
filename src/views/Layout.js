@@ -11,13 +11,13 @@ const browserHistory = createBrowserHistory();
 function Layout() {
     return (
         <div className="Layout">
-            <HTHeader />
-
             <Router history={browserHistory}>
-                <Routes />
-            </Router>
+                <HTHeader />
 
-            <HTFooter />
+                <Routes />
+
+                <HTFooter />
+            </Router>
         </div>
     );
 }
