@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { HTMedia } from '../../components';
+import { HTMedia, HTTourItem } from '../../components';
 
 import { Button, Typography, Container } from '@material-ui/core';
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';

@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './views/Home';
 import { ToursView, TourView } from './views/Tours';
 import MyProfile from './views/MyProfile/MyProfile';
+import CityWalks from './views/CityWalks/CityWalks';
 import NotFound from './views/NotFound';
 
 
@@ -15,6 +16,11 @@ const Routing = [
     {
         path: "/tours",
         component: ToursView,
+
+    },
+    {
+        path: "/city-walks",
+        component: CityWalks,
 
     },
     {

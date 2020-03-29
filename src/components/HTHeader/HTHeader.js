@@ -77,6 +77,7 @@ function HTHeader() {
                             <Typography className={classes.root}>
                                 <Link className={classes.link} to="/">Home</Link>
                                 <Link className={classes.link} to="/tours">Tours</Link>
+                                <Link className={classes.link} to="/city-walks">City Walks</Link>
                                 <Link className={classes.link} to="/about">About</Link>
                                 {authData && authData.isAuthenticated ?
 

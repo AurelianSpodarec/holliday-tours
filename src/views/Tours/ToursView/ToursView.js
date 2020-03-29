@@ -1,15 +1,24 @@
 import React from 'react';
 
-import { Grid, Typography } from '@material-ui/core';
+import { HTTourItem } from '../../../components';
 
 import useStyles from './styles';
+import HTBanner from '../../../components/HTBanner/HTBanner';
+
 
 function ToursView() {
     const classes = useStyles();
 
     return (
         <div className={classes.root}>
-            ToursView
+            <HTBanner
+                image={"https://melbourne-tours-housemates.netlify.com/assets/images/banners/tours-banner.jpg"}
+                title="Tours"
+            />
+
+            <HTTourItem />
+            <HTTourItem />
+            <HTTourItem />
         </div>
     );
 }
