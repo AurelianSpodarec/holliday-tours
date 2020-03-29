@@ -50,7 +50,7 @@ function HTHeader() {
 
         <div className={classes.grow}>
             <AppBar className={classes.appBar}>
-                <Toolbar className={classes.container}>
+                <Toolbar>
 
 
                     <img className={classes.logoImage} src="images/logos/logo-neutral.png" title="Holliday Tours Logo" />

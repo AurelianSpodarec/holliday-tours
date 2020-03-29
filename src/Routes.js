@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Home from './views/Home';
 import { ToursView, TourView } from './views/Tours';
+import MyProfile from './views/MyProfile/MyProfile';
 import NotFound from './views/NotFound';
 
 
@@ -19,6 +20,10 @@ const Routing = [
     {
         path: "/tours/:id",
         component: TourView,
+    },
+    {
+        path: "/my-profile",
+        component: MyProfile,
     },
     {
         path: "*",

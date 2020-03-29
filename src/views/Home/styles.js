@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
         color: "white",
         top: "50%",
         transform: "translateY(-50%)",
-        left: "10%"
+        // left: "10%"
     }
 }));
 

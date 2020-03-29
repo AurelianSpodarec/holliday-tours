@@ -17,9 +17,9 @@ import Visibility from '@material-ui/icons/Visibility';
 import EmailIcon from '@material-ui/icons/Email';
 
 import { useDispatch } from "react-redux";
-import { handleOnSignup, handleOnLogin } from "../../services/auth";
+import { handleOnSignup, handleOnLogin } from "./../../services/firebase/auth";
 
-import { openModal, closeModal } from "../../store/actions/HTModalActions";
+import { openModal, closeModal } from "./../../store/actions/HTModalActions";
 
 import useStyles from './styles';
 

@@ -21,7 +21,9 @@ function App() {
     return (
         <AuthProvider>
             <ThemeProvider theme={theme}>
+
                 <HTModal />
+
                 <Layout />
 
             </ThemeProvider>

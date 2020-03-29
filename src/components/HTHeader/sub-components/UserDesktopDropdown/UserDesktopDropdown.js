@@ -1,16 +1,23 @@
 import React, { useState, useContext } from 'react';
 
+
+
+import { BrowserRouter as Router, Switch, Route, Link, useLocation } from 'react-router-dom';
+
 import {
     Hidden,
     IconButton,
     Button,
     MenuItem,
     Menu,
-    Fade
+    Fade,
+    ListItemIcon,
+    Typography
 } from '@material-ui/core';
-import { AccountCircle } from "@material-ui/icons";
 
-import { logout } from '../../../../services/auth';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+
+import { logout } from '../../../../services/firebase/auth';
 
 import useStyles from './styles';
 
@@ -41,7 +48,7 @@ function UserDekstopDropdown() {
                         // onClick={renderUserDropdown}
                         color="inherit"
                     >
-                        <AccountCircle />
+                        <AccountCircleIcon />
                     </IconButton>
                 </Button>
             </Hidden>
@@ -64,7 +71,14 @@ function UserDekstopDropdown() {
                 }}
                 TransitionComponent={Fade}
             >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
+                <Link to="/my-profile">
+                    <MenuItem onClick={handleClose}>
+                        <ListItemIcon>
+                            <AccountCircleIcon fontSize="small" />
+                        </ListItemIcon>
+                        <Typography variant="inherit">My Profile</Typography>
+                    </MenuItem>
+                </Link>
                 <MenuItem onClick={handleClose}>My account</MenuItem>
                 <MenuItem onClick={() => logout()}>Logout</MenuItem>
             </Menu>
