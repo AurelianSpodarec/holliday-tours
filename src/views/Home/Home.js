@@ -20,8 +20,8 @@ function Home() {
                     blockIframe
                 />
                 <div className={classes.homeBannerCaption}>
-                    <Container>
-                        <Typography variant="h3" >Awesome Tours</Typography>
+                    <Container maxWidth="lg">
+                        <Typography className={classes.bannerTitle} variant="h2" >Explore the world</Typography>
                         <Typography variant="subtitle1" gutterBottom>Explore one of the best world class tours in the world, based in Melebourne!</Typography>
 
                         <Button

@@ -20,6 +20,7 @@ const useStyles = makeStyles(theme => ({
         fontWeight: 'bold',
         fontSize: '1.5em',
         display: 'none',
+        textDecoration: 'none',
         [theme.breakpoints.up('sm')]: {
             display: 'block',
         },
@@ -36,8 +37,13 @@ const useStyles = makeStyles(theme => ({
             marginLeft: theme.spacing(3)
         },
     },
-    link:{
+    link: {
         padding: '15px 14px',
+        color: '#fff',
+        textDecoration: 'none',
+        ['&:hover']: {
+            opacity: .75,
+        }
     },
     searchInputRoot: {
         width: '100%',

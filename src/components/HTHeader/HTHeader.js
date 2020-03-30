@@ -14,6 +14,7 @@ import {
     MenuItem,
     CardMedia,
     Menu,
+    Container,
 } from '@material-ui/core';
 
 import SearchIcon from "@material-ui/icons/Search";
@@ -50,59 +51,61 @@ function HTHeader() {
 
         <div className={classes.grow}>
             <AppBar className={classes.appBar}>
-                <Toolbar>
+                <Container maxWidth="xl">
+                    <Toolbar>
+
+                        <img className={classes.logoImage} src="images/logos/logo-neutral.png" title="Holliday Tours Logo" />
+                        <Typography ><Link className={classes.logoText} to="/">Holliday Tours</Link></Typography>
 
 
-                    <img className={classes.logoImage} src="images/logos/logo-neutral.png" title="Holliday Tours Logo" />
-                    <Typography className={classes.logoText}><Link to="/">Holliday Tours</Link></Typography>
-
-
-                    <div className={classes.search}>
-                        <div className={classes.searchIcon}>
-                            <SearchIcon />
+                        <div className={classes.search}>
+                            <div className={classes.searchIcon}>
+                                <SearchIcon />
+                            </div>
+                            <InputBase
+                                placeholder="Search…"
+                                classes={{
+                                    root: classes.searchInputRoot,
+                                    input: classes.searchInput,
+                                }}
+                                inputProps={{ 'aria-label': 'search' }}
+                            />
                         </div>
-                        <InputBase
-                            placeholder="Search…"
-                            classes={{
-                                root: classes.searchInputRoot,
-                                input: classes.searchInput,
-                            }}
-                            inputProps={{ 'aria-label': 'search' }}
-                        />
-                    </div>
 
-                    <Hidden smDown>
-                        <div>
+                        <Hidden smDown>
+                            <div>
 
-                            <Typography className={classes.root}>
-                                <Link className={classes.link} to="/">Home</Link>
-                                <Link className={classes.link} to="/tours">Tours</Link>
-                                <Link className={classes.link} to="/city-walks">City Walks</Link>
-                                <Link className={classes.link} to="/about">About</Link>
-                                {authData && authData.isAuthenticated ?
+                                <Typography className={classes.root}>
+                                    <Link className={classes.link} to="/">Home</Link>
+                                    <Link className={classes.link} to="/tours">Tours</Link>
+                                    <Link className={classes.link} to="/city-walks">City Walks</Link>
+                                    <Link className={classes.link} to="/about">About</Link>
+                                    {authData && authData.isAuthenticated ?
 
-                                    <UserDekstopDropdown />
+                                        <UserDekstopDropdown />
 
-                                    :
-                                    <>
-                                        <Button onClick={() => dispatch(openModal('AUTH'))} variant="outlined" color="secondary">Log In</Button>
-                                        <Button onClick={() => dispatch(openModal('AUTH'))} variant="contained" color="secondary">Sign Up</Button>
-                                    </>
-                                }
-                            </Typography>
-                        </div>
-                    </Hidden>
+                                        :
+                                        <>
+                                            <Button onClick={() => dispatch(openModal('AUTH'))} variant="outlined" color="secondary">Log In</Button>
+                                            <Button onClick={() => dispatch(openModal('AUTH'))} variant="contained" color="secondary">Sign Up</Button>
+                                        </>
+                                    }
+                                </Typography>
+                            </div>
+                        </Hidden>
 
-                    <Hidden mdUp>
-                        <IconButton
+                        <Hidden mdUp>
+                            <IconButton
 
-                            aria-label="open drawer"
-                            onClick={handleDrawerToggle}
-                        >
-                            <MenuIcon />
-                        </IconButton>
-                    </Hidden>
-                </Toolbar>
+                                aria-label="open drawer"
+                                onClick={handleDrawerToggle}
+                            >
+                                <MenuIcon />
+                            </IconButton>
+                        </Hidden>
+                    </Toolbar>
+                </Container>ß
+
 
                 {/* Mobile menu */}
                 <Hidden mdUp implementation="js">
