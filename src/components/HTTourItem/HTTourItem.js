@@ -15,15 +15,17 @@ const HTTourItem = () => {
     const dispatch = useDispatch();
 
     return (
-        <Card>
+        <Card className={classes.root}>
             {/* <CardActionArea> */}
-            <CardMedia
-                className={classes.media}
-                image="https://melbourne-tours-housemates.netlify.com/assets/images/banners/tours-banner.jpg"
-                title="Contemplative Reptile"
-            >
-                <HTAddToFavourite />
-            </CardMedia>
+
+            <div className={classes.imageWrap}>
+                <CardMedia
+                    className={classes.image}
+                    image={"https://melbourne-tours-housemates.netlify.com/assets/images/banners/tours-banner.jpg"}>
+                    <HTAddToFavourite />
+                    {/* <img className={classes.image} src="https://melbourne-tours-housemates.netlify.com/assets/images/banners/tours-banner.jpg" /> */}
+                </CardMedia>
+            </div>
 
             <CardContent>
                 <Typography variant="body2" color="textSecondary" component="p">
@@ -33,10 +35,15 @@ const HTTourItem = () => {
                     Magnificent Melbourne Morning City Tours
                     </Typography>
             </CardContent>
-            <CardActions>
+            <CardActions className={classes.footer}>
 
-                <div>
+                <div className={classes.rating}>
+                    {/* <Icon className="tour-item__rating-icon" name="star" /> */}
 
+                    <Typography className={classes.ratingScore}><StarIcon className={classes.ratingIcon} />{8.88834.toFixed(2)}</Typography>
+                </div>
+                <div className="tour-item__price-wrap">
+                    <Typography className={classes.ratingPrice}>A$ 54</Typography>
                 </div>
 
             </CardActions>

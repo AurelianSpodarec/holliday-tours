@@ -1,8 +1,11 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
-    root: {
-
+    heart: {
+        cursor: 'pointer',
+        display: 'flex',
+        justifyContent: 'flex-end',
+        padding: '12px'
     },
 
 }));

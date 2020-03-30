@@ -15,7 +15,7 @@ const HTAddToFavourite = () => {
     }
 
     return (
-        <div onClick={onLike}>
+        <div className={classes.heart} onClick={onLike}>
             {isLike ? <FavoriteIcon /> : <FavoriteBorderIcon />}
         </div>
     );
